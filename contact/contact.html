@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact | Putu Eka Cesta Dewi</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="contact.css">
+</head>
+<body>
+<header class="navbar">
+    <div class="nav-container">
+        <a href="../dashboard/index.html" class="logo">EKA CESTA</a>
+        <nav class="nav-menu" id="navMenu">
+            <a href="../dashboard/index.html" data-id="BERANDA" data-en="HOME">BERANDA</a>
+            <a href="../about/about.html" data-id="TENTANG" data-en="ABOUT">TENTANG</a>
+            <a href="../projects/projects.html" data-id="PROYEK" data-en="PROJECTS">PROYEK</a>
+            <a href="../experience/experience.html" data-id="PENGALAMAN" data-en="EXPERIENCE">PENGALAMAN</a>
+            <a href="../activities/activities.html" data-id="AKTIVITAS" data-en="ACTIVITIES">AKTIVITAS</a>
+            <a href="../achievements/achievements.html" data-id="PRESTASI" data-en="ACHIEVEMENTS">PRESTASI</a>
+            <a href="../contact/contact.html" class="active" data-id="KONTAK" data-en="CONTACT">KONTAK</a>
+            <div class="language-dropdown" id="languageDropdown">
+                <button class="language-selected" id="languageSelected" type="button" aria-expanded="false" aria-label="Pilih bahasa">
+                    <span class="language-flag" id="selectedFlag">🇮🇩</span>
+                    <span class="language-code" id="selectedLanguage">ID</span>
+                    <span class="language-chevron">↓</span>
+                </button>
+                <div class="language-options" id="languageOptions">
+                    <button class="language-option active" type="button" data-language="id"><span class="option-flag">🇮🇩</span><span>Indonesia</span></button>
+                    <button class="language-option" type="button" data-language="en"><span class="option-flag">🇬🇧</span><span>English</span></button>
+                </div>
+            </div>
+        </nav>
+        <button class="menu-toggle" id="menuToggle" type="button" aria-label="Buka menu"><span></span><span></span><span></span></button>
+    </div>
+</header>
+
+<main>
+<section class="contact-hero">
+    <div class="section-container">
+        <p class="section-label" data-id="KONTAK" data-en="CONTACT">KONTAK</p>
+        <h1>
+            <span data-id="Mari terhubung." data-en="Let's connect.">Mari terhubung.</span><br>
+            <span class="hero-outline" data-id="Saya terbuka untuk kesempatan baru." data-en="I'm open to new opportunities.">Saya terbuka untuk kesempatan baru.</span>
+        </h1>
+        <p class="contact-hero-description" data-id="Jika kamu ingin berdiskusi mengenai proyek, peluang kerja, kolaborasi, atau sekadar ingin terhubung, jangan ragu untuk menghubungi saya." data-en="If you would like to discuss a project, career opportunity, collaboration, or simply connect, feel free to reach out.">Jika kamu ingin berdiskusi mengenai proyek, peluang kerja, kolaborasi, atau sekadar ingin terhubung, jangan ragu untuk menghubungi saya.</p>
+    </div>
+</section>
+
+<section class="contact-section">
+    <div class="section-container">
+        <div class="contact-grid">
+            <div class="contact-intro reveal">
+                <p class="section-label" data-id="HUBUNGI SAYA" data-en="GET IN TOUCH">HUBUNGI SAYA</p>
+                <h2><span data-id="Satu pesan" data-en="One message">Satu pesan</span><br><span data-id="bisa menjadi awal." data-en="can be a beginning.">bisa menjadi awal.</span></h2>
+                <p class="contact-text" data-id="Saya senang bertemu dengan orang baru, berdiskusi tentang teknologi, dan mengeksplorasi peluang untuk belajar serta berkembang bersama." data-en="I enjoy meeting new people, discussing technology, and exploring opportunities to learn and grow together.">Saya senang bertemu dengan orang baru, berdiskusi tentang teknologi, dan mengeksplorasi peluang untuk belajar serta berkembang bersama.</p>
+            </div>
+
+            <div class="contact-list">
+                <a href="mailto:ekacesta2904@gmail.com" class="contact-item reveal">
+                    <div class="contact-icon">@</div>
+                    <div class="contact-info"><span class="contact-label">EMAIL</span><span class="contact-value">ekacesta2904@gmail.com</span></div>
+                    <span class="contact-arrow">↗</span>
+                </a>
+                <a href="https://www.linkedin.com/in/putuekacestadewi" target="_blank" rel="noopener noreferrer" class="contact-item reveal">
+                    <div class="contact-icon">in</div>
+                    <div class="contact-info"><span class="contact-label">LINKEDIN</span><span class="contact-value">putuekacestadewi</span></div>
+                    <span class="contact-arrow">↗</span>
+                </a>
+                <div class="contact-item reveal">
+                    <div class="contact-icon">+</div>
+                    <div class="contact-info"><span class="contact-label" data-id="LOKASI" data-en="LOCATION">LOKASI</span><span class="contact-value">Denpasar, Bali, Indonesia</span></div>
+                </div>
+                <a href="../assets/cv/CV_Putu Eka Cesta Dewi.pdf" target="_blank" class="contact-cv reveal">
+                    <div><span class="contact-label" data-id="LIHAT CV" data-en="VIEW CV">LIHAT CV</span><span class="cv-title" data-id="Curriculum Vitae" data-en="Curriculum Vitae">Curriculum Vitae</span></div>
+                    <span class="cv-arrow">↓</span>
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="contact-final">
+    <div class="section-container">
+        <div class="final-content reveal">
+            <p class="section-label" data-id="SAMPAI JUMPA" data-en="SEE YOU">SAMPAI JUMPA</p>
+            <h2><span data-id="Mari buat sesuatu" data-en="Let's build something">Mari buat sesuatu</span><br><span class="gradient-text" data-id="yang berarti." data-en="meaningful.">yang berarti.</span></h2>
+        </div>
+    </div>
+</section>
+</main>
+
+<footer class="footer">
+    <div class="section-container footer-container">
+        <div>
+            <h3>EKA CESTA</h3>
+            <p data-id="Teknik Fisika · Instrumentasi · IoT" data-en="Physics Engineering · Instrumentation · IoT">Teknik Fisika · Instrumentasi · IoT</p>
+        </div>
+        <div><p>© 2026 Putu Eka Cesta Dewi</p></div>
+    </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/@twemoji/api@latest/dist/twemoji.min.js"></script>
+<script src="contact.js"></script>
+<script>
+function parseTwemoji(){if(window.twemoji){twemoji.parse(document.body,{folder:"svg",ext:".svg"});}}
+document.addEventListener("DOMContentLoaded",function(){parseTwemoji();});
+const languageElements=document.querySelectorAll("#selectedFlag, .option-flag");
+languageElements.forEach(function(element){const observer=new MutationObserver(function(){parseTwemoji();});observer.observe(element,{childList:true,subtree:true,characterData:true});});
+</script>
+</body>
+</html>

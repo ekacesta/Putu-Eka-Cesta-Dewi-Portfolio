@@ -1,0 +1,1352 @@
+:root {
+
+    --navy: #17213a;
+    --navy-light: #29344f;
+
+    --purple-gray: #77758a;
+    --purple-soft: #aaa0a5;
+
+    --peach: #e9c4ae;
+    --peach-soft: #f3ddd0;
+
+    --cream: #fafaf8;
+    --white: #ffffff;
+
+    --light-gray: #f4f2f3;
+    --warm-gray: #eee9e8;
+
+    --text: #30364a;
+    --text-soft: #65697a;
+
+    --border: rgba(23,33,58,.12);
+    --border-light: rgba(23,33,58,.08);
+
+    --gradient:
+        linear-gradient(
+            120deg,
+            #e9c4ae 0%,
+            #aaa0a5 48%,
+            #17213a 100%
+        );
+
+    --shadow-soft:
+        0 20px 60px rgba(23,33,58,.08);
+
+    --shadow-card:
+        0 12px 35px rgba(23,33,58,.07);
+
+    --radius-xl: 30px;
+    --radius-lg: 24px;
+    --radius-md: 18px;
+    --radius-sm: 12px;
+
+}
+
+
+/* =========================================================
+   RESET
+========================================================= */
+
+* {
+
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+
+}
+
+
+html {
+
+    scroll-behavior: smooth;
+
+}
+
+
+body {
+
+    font-family: "DM Sans", sans-serif;
+
+    background: var(--cream);
+
+    color: var(--text);
+
+    line-height: 1.6;
+
+}
+
+
+img {
+
+    max-width: 100%;
+    display: block;
+
+}
+
+
+.section-container {
+
+    width: min(
+        1280px,
+        calc(100% - 80px)
+    );
+
+    margin: auto;
+
+}
+
+
+.section-label {
+
+    font-size: .64rem;
+
+    font-weight: 700;
+
+    letter-spacing: .16em;
+
+    color: var(--purple-gray);
+
+}
+
+
+/* =========================================================
+   NAVBAR
+========================================================= */
+
+.navbar {
+
+    position: sticky;
+
+    top: 0;
+
+    z-index: 1000;
+
+    background:
+        rgba(250,250,248,.94);
+
+    backdrop-filter: blur(14px);
+
+    -webkit-backdrop-filter: blur(14px);
+
+    border-bottom:
+        1px solid var(--border);
+
+}
+
+
+.nav-container {
+
+    width: min(
+        1280px,
+        calc(100% - 80px)
+    );
+
+    min-height: 84px;
+
+    margin: auto;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 30px;
+
+}
+
+
+.logo {
+
+    text-decoration: none;
+
+    font-size: .85rem;
+
+    font-weight: 700;
+
+    letter-spacing: .12em;
+
+    color: var(--navy);
+
+    white-space: nowrap;
+
+}
+
+
+.nav-menu {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 30px;
+
+}
+
+
+.nav-menu a {
+
+    position: relative;
+
+    text-decoration: none;
+
+    color: #626776;
+
+    font-size: .7rem;
+
+    font-weight: 600;
+
+    letter-spacing: .08em;
+
+    transition:
+        color .3s ease;
+
+}
+
+
+.nav-menu a:hover,
+.nav-menu a.active {
+
+    color: var(--navy);
+
+}
+
+
+.nav-menu a.active::after {
+
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+
+    bottom: -8px;
+
+    width: 100%;
+
+    height: 1px;
+
+    background: var(--navy);
+
+}
+
+
+/* LANGUAGE */
+
+.language-dropdown {
+
+    position: relative;
+
+    margin-left: 8px;
+
+    padding-left: 18px;
+
+    border-left:
+        1px solid var(--border);
+
+}
+
+
+.language-selected {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 7px;
+
+    padding: 7px 9px;
+
+    border:
+        1px solid transparent;
+
+    border-radius: 8px;
+
+    background: transparent;
+
+    color: var(--navy);
+
+    cursor: pointer;
+
+    transition: .25s ease;
+
+}
+
+
+.language-selected:hover {
+
+    background:
+        rgba(23,33,58,.05);
+
+    border-color:
+        var(--border);
+
+}
+
+
+.language-flag,
+.option-flag {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    width: 20px;
+
+    height: 20px;
+
+    line-height: 1;
+
+}
+
+
+.language-flag img,
+.option-flag img {
+
+    display: inline-block;
+
+    width: 18px;
+
+    height: 18px;
+
+    margin: 0;
+
+}
+
+
+.language-code {
+
+    font-size: .65rem;
+
+    font-weight: 700;
+
+    letter-spacing: .08em;
+
+}
+
+
+.language-chevron {
+
+    font-size: .65rem;
+
+    color: #777;
+
+    transition:
+        transform .25s ease;
+
+}
+
+
+.language-dropdown.open
+.language-chevron {
+
+    transform: rotate(180deg);
+
+}
+
+
+.language-options {
+
+    position: absolute;
+
+    top: calc(100% + 10px);
+
+    right: 0;
+
+    width: 155px;
+
+    padding: 7px;
+
+    background:
+        rgba(255,255,255,.98);
+
+    border:
+        1px solid var(--border);
+
+    border-radius: 12px;
+
+    box-shadow:
+        0 15px 35px
+        rgba(23,33,58,.12);
+
+    opacity: 0;
+
+    visibility: hidden;
+
+    transform:
+        translateY(-6px);
+
+    transition:
+        opacity .2s ease,
+        transform .2s ease,
+        visibility .2s ease;
+
+}
+
+
+.language-dropdown.open
+.language-options {
+
+    opacity: 1;
+
+    visibility: visible;
+
+    transform:
+        translateY(0);
+
+}
+
+
+.language-option {
+
+    width: 100%;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    padding: 10px 11px;
+
+    border: none;
+
+    border-radius: 7px;
+
+    background: transparent;
+
+    color: var(--navy);
+
+    font-size: .72rem;
+
+    text-align: left;
+
+    cursor: pointer;
+
+}
+
+
+.language-option:hover,
+.language-option.active {
+
+    background: #f1efec;
+
+}
+
+
+.menu-toggle {
+
+    display: none;
+
+    width: 40px;
+
+    height: 40px;
+
+    border: none;
+
+    background: transparent;
+
+    cursor: pointer;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    align-items: center;
+
+    gap: 5px;
+
+}
+
+
+.menu-toggle span {
+
+    display: block;
+
+    width: 23px;
+
+    height: 2px;
+
+    background: var(--navy);
+
+}
+
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.achievements-hero {
+
+    padding: 120px 0 110px;
+
+    background:
+        linear-gradient(
+            115deg,
+            #f1d8ca 0%,
+            #e7dfe0 35%,
+            #c9c4cc 65%,
+            #ecebe8 100%
+        );
+
+}
+
+
+.achievements-hero h1 {
+
+    max-width: 1000px;
+
+    margin-top: 18px;
+
+    font-family:
+        "Playfair Display",
+        serif;
+
+    font-size:
+        clamp(55px,7vw,100px);
+
+    font-weight: 500;
+
+    line-height: .98;
+
+    letter-spacing: -4px;
+
+    color: var(--navy);
+
+}
+
+
+.achievements-hero-description {
+
+    max-width: 650px;
+
+    margin-top: 35px;
+
+    font-size: 16px;
+
+    line-height: 1.8;
+
+    color: #555d70;
+
+}
+
+
+/* =========================================================
+   ACHIEVEMENT SECTION
+========================================================= */
+
+.achievement-section {
+
+    padding: 120px 0;
+
+}
+
+
+.achievement-section-dark {
+
+    background: #f1efed;
+
+}
+
+
+.section-heading {
+
+    display: flex;
+
+    align-items: flex-end;
+
+    justify-content: space-between;
+
+    gap: 30px;
+
+    margin-bottom: 50px;
+
+}
+
+
+.section-heading h2 {
+
+    margin-top: 12px;
+
+    font-family:
+        "Playfair Display",
+        serif;
+
+    font-size:
+        clamp(38px,5vw,64px);
+
+    font-weight: 500;
+
+    line-height: 1;
+
+    letter-spacing: -2px;
+
+    color: var(--navy);
+
+}
+
+
+.achievement-number {
+
+    font-family:
+        "Playfair Display",
+        serif;
+
+    font-size: 48px;
+
+    color:
+        rgba(23,33,58,.18);
+
+}
+
+
+/* =========================================================
+   MAIN CARD
+========================================================= */
+
+.achievement-main-card {
+
+    padding: 55px;
+
+    border:
+        1px solid var(--border);
+
+    border-radius:
+        var(--radius-lg);
+
+    background:
+        rgba(255,255,255,.72);
+
+    box-shadow:
+        var(--shadow-card);
+
+}
+
+
+.achievement-main-top {
+
+    display: grid;
+
+    grid-template-columns:
+        280px 1fr;
+
+    gap: 70px;
+
+    align-items: center;
+
+}
+
+
+.achievement-logo-wrap {
+
+    min-height: 190px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    padding: 28px;
+
+    border-radius:
+        var(--radius-md);
+
+    background: #f5f1ee;
+
+    border:
+        1px solid var(--border-light);
+
+}
+
+
+.achievement-logo-wrap img {
+
+    max-width: 180px;
+
+    max-height: 125px;
+
+    width: auto;
+
+    height: auto;
+
+    object-fit: contain;
+
+}
+
+
+.achievement-meta {
+
+    font-size: .64rem;
+
+    font-weight: 700;
+
+    letter-spacing: .14em;
+
+    color: var(--purple-gray);
+
+}
+
+
+.achievement-content h3 {
+
+    margin-top: 12px;
+
+    font-family:
+        "Playfair Display",
+        serif;
+
+    font-size:
+        clamp(32px,4vw,52px);
+
+    font-weight: 500;
+
+    line-height: 1;
+
+    color: var(--navy);
+
+}
+
+
+.achievement-content > p:not(.achievement-meta) {
+
+    max-width: 720px;
+
+    margin-top: 22px;
+
+    font-size: 15px;
+
+    line-height: 1.85;
+
+    color: var(--text-soft);
+
+}
+
+
+/* TAGS */
+
+.achievement-tags {
+
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 8px;
+
+    margin-top: 28px;
+
+}
+
+
+.achievement-tags span {
+
+    padding: 8px 12px;
+
+    border:
+        1px solid var(--border);
+
+    border-radius: 999px;
+
+    background:
+        var(--cream);
+
+    font-size: .65rem;
+
+    font-weight: 600;
+
+    letter-spacing: .04em;
+
+    color: var(--navy);
+
+}
+
+
+/* =========================================================
+   MEDIA SECTION
+========================================================= */
+
+.achievement-media-section,
+.certificate-section {
+
+    margin-top: 75px;
+
+    padding-top: 55px;
+
+    border-top:
+        1px solid var(--border-light);
+
+}
+
+
+.media-heading {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    margin-bottom: 28px;
+
+}
+
+
+.media-heading h4 {
+
+    margin-top: 8px;
+
+    font-family:
+        "Playfair Display",
+        serif;
+
+    font-size: 28px;
+
+    font-weight: 500;
+
+    color: var(--navy);
+
+}
+
+
+/* =========================================================
+   DOCUMENTATION
+========================================================= */
+
+.documentation-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 18px;
+
+}
+
+
+.documentation-card {
+
+    min-width: 0;
+
+}
+
+
+.media-placeholder {
+
+    position: relative;
+
+    aspect-ratio: 4 / 3;
+
+    overflow: hidden;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border:
+        1px dashed
+        rgba(23,33,58,.22);
+
+    border-radius:
+        var(--radius-md);
+
+    background:
+        linear-gradient(
+            135deg,
+            #f5eee9,
+            #eeecee
+        );
+
+}
+
+
+.media-placeholder img {
+
+    position: absolute;
+
+    inset: 0;
+
+    width: 100%;
+
+    height: 100%;
+
+    object-fit: cover;
+
+    opacity: 0;
+
+    transition:
+        opacity .3s ease;
+
+}
+
+
+.media-placeholder.has-image img {
+
+    opacity: 1;
+
+}
+
+
+.media-placeholder.has-image
+.placeholder-content {
+
+    display: none;
+
+}
+
+
+.placeholder-content {
+
+    text-align: center;
+
+    color:
+        rgba(23,33,58,.45);
+
+}
+
+
+.placeholder-content span {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    width: 42px;
+
+    height: 42px;
+
+    margin: 0 auto 10px;
+
+    border:
+        1px solid
+        rgba(23,33,58,.18);
+
+    border-radius: 50%;
+
+    font-size: 24px;
+
+    font-weight: 300;
+
+}
+
+
+.placeholder-content p {
+
+    font-size: 11px;
+
+    letter-spacing: .08em;
+
+    text-transform: uppercase;
+
+}
+
+
+.documentation-card figcaption {
+
+    margin-top: 10px;
+
+    font-size: .68rem;
+
+    font-weight: 600;
+
+    letter-spacing: .08em;
+
+    color: var(--purple-gray);
+
+}
+
+
+/* =========================================================
+   CERTIFICATE
+========================================================= */
+
+.certificate-frame {
+
+    width: 100%;
+
+    max-width: 900px;
+
+}
+
+
+.certificate-placeholder {
+
+    aspect-ratio: 16 / 10;
+
+}
+
+
+.samsung-certificate {
+
+    margin-top: 65px;
+
+}
+
+
+/* =========================================================
+   NOTE
+========================================================= */
+
+.achievement-note {
+
+    padding: 110px 0;
+
+    background: var(--navy);
+
+    color: var(--white);
+
+}
+
+
+.note-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        220px 1fr;
+
+    gap: 70px;
+
+    align-items: start;
+
+}
+
+
+.note-grid .section-label {
+
+    color:
+        rgba(255,255,255,.48);
+
+}
+
+
+.note-grid > p:last-child {
+
+    max-width: 760px;
+
+    font-family:
+        "Playfair Display",
+        serif;
+
+    font-size:
+        clamp(28px,3.4vw,48px);
+
+    line-height: 1.15;
+
+    color:
+        rgba(255,255,255,.92);
+
+}
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+.footer {
+
+    padding: 35px 0;
+
+    background: #11192d;
+
+    color: var(--white);
+
+}
+
+
+.footer-container {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 30px;
+
+}
+
+
+.footer h3 {
+
+    margin: 0;
+
+    font-size: 14px;
+
+    font-weight: 700;
+
+    letter-spacing: .12em;
+
+}
+
+
+.footer p {
+
+    margin-top: 5px;
+
+    font-size: 11px;
+
+    color:
+        rgba(255,255,255,.5);
+
+}
+
+
+.footer-container > div:last-child p {
+
+    margin-top: 0;
+
+}
+
+
+/* =========================================================
+   REVEAL
+========================================================= */
+
+.reveal {
+
+    opacity: 0;
+
+    transform:
+        translateY(25px);
+
+    transition:
+        opacity .7s ease,
+        transform .7s ease;
+
+}
+
+
+.reveal.active {
+
+    opacity: 1;
+
+    transform:
+        translateY(0);
+
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 1100px) {
+
+    .nav-menu {
+
+        gap: 20px;
+
+    }
+
+
+    .achievement-main-top {
+
+        grid-template-columns:
+            220px 1fr;
+
+        gap: 45px;
+
+    }
+
+
+    .achievement-main-card {
+
+        padding: 40px;
+
+    }
+
+}
+
+
+/* =========================================================
+   MOBILE NAV
+========================================================= */
+
+@media (max-width: 800px) {
+
+    .nav-menu {
+
+        display: none;
+
+        position: absolute;
+
+        top: 84px;
+
+        left: 0;
+
+        right: 0;
+
+        padding: 25px 40px;
+
+        flex-direction: column;
+
+        align-items: flex-start;
+
+        gap: 22px;
+
+        background:
+            var(--cream);
+
+        border-bottom:
+            1px solid var(--border);
+
+    }
+
+
+    .nav-menu.show {
+
+        display: flex;
+
+    }
+
+
+    .menu-toggle {
+
+        display: flex;
+
+    }
+
+
+    .language-dropdown {
+
+        margin-left: 0;
+
+        padding-left: 0;
+
+        border-left: none;
+
+    }
+
+
+    .achievement-main-top {
+
+        grid-template-columns: 1fr;
+
+        gap: 35px;
+
+    }
+
+
+    .achievement-logo-wrap {
+
+        min-height: 170px;
+
+    }
+
+
+    .documentation-grid {
+
+        grid-template-columns:
+            repeat(2, 1fr);
+
+    }
+
+
+    .note-grid {
+
+        grid-template-columns: 1fr;
+
+        gap: 25px;
+
+    }
+
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 650px) {
+
+    .section-container,
+    .nav-container {
+
+        width:
+            min(
+                calc(100% - 34px),
+                1180px
+            );
+
+    }
+
+
+    .achievements-hero {
+
+        padding: 90px 0;
+
+    }
+
+
+    .achievements-hero h1 {
+
+        letter-spacing: -2px;
+
+    }
+
+
+    .achievement-section {
+
+        padding: 85px 0;
+
+    }
+
+
+    .section-heading {
+
+        margin-bottom: 35px;
+
+    }
+
+
+    .achievement-number {
+
+        font-size: 34px;
+
+    }
+
+
+    .achievement-main-card {
+
+        padding: 25px;
+
+    }
+
+
+    .achievement-content h3 {
+
+        font-size: 38px;
+
+    }
+
+
+    .documentation-grid {
+
+        grid-template-columns: 1fr;
+
+    }
+
+
+    .achievement-note {
+
+        padding: 85px 0;
+
+    }
+
+
+    .footer-container {
+
+        align-items: flex-start;
+
+        flex-direction: column;
+
+        gap: 10px;
+
+    }
+
+}
